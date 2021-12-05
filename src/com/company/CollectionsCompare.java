@@ -3,6 +3,7 @@ package com.company;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -113,6 +114,23 @@ public class CollectionsCompare {
         TableOfResults.setPreferredScrollableViewportSize(new Dimension(500, 150));
         frame.getContentPane().add(scroll);
         frame.setVisible(true);
+    }
+
+    /**
+     * Overriding a method that returns a string with results for two collections.
+     * @return Result of testing
+     */
+    @Override
+    public String toString() {
+        String resultLineArray = "";
+        String resultLineLink = "";
+        for (int i = 0; i < 3; i++) {
+            resultLineArray += table[i][0] + ": " + table[i][1] + "; ";
+        }
+        for (int i = 0; i < 3; i++) {
+            resultLineLink += table[i][0] + ": " + table[i][2] + "; ";
+        }
+        return "ArrayList. " + resultLineArray + "\nLinkedList. " + resultLineLink;
     }
 
     /**
