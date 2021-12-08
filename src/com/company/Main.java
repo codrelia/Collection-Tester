@@ -10,7 +10,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter the size of the ArrayList and LinkedList you are interested in. " +
-                "\nEnter a negative number to leave the default values.");
+                "\nEnter a negative number or zero to leave the default values.");
         while (!scanner.hasNextInt()) {
             System.out.println("Please, enter only integer!");
             scanner.next();

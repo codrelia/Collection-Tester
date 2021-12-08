@@ -3,7 +3,6 @@ package com.company;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -26,10 +25,10 @@ public class CollectionsCompare {
 
     /**
      * Initializer of the class. Sets all variables to the required values.
-     * @param size The size of the collections.
+     * @param sizeOfLists The size of the collections.
      */
-    public CollectionsCompare(int size){
-        sizeOfLists = size;
+    public CollectionsCompare(int sizeOfLists){
+        this.sizeOfLists = sizeOfLists;
         table = new String[][]{{"Add", "0", "0"}, {"Get", "0", "0"}, {"Remove", "0", "0"}};
     }
 
@@ -49,8 +48,8 @@ public class CollectionsCompare {
      * @param indexRow The line where the current data should be inserted.
      */
     private void tableConfigure(int indexRow, long timeArray, long timeLink) {
-        table[indexRow][1] = Long.toString(timeArray) + " мс";
-        table[indexRow][2] = Long.toString(timeLink) + " мс";
+        table[indexRow][1] = Long.toString(timeArray) + " ms";
+        table[indexRow][2] = Long.toString(timeLink) + " ms";
     }
 
     /**
@@ -59,6 +58,7 @@ public class CollectionsCompare {
     public void tester() {
         List<Integer> arrayList = new ArrayList<>();
         List<Integer> linkedList = new LinkedList<>();
+
         tableConfigure(0, addTest(arrayList), addTest(linkedList));
         tableConfigure(1, getTest(arrayList), getTest(linkedList));
         tableConfigure(2, removeTest(arrayList), removeTest(linkedList));
@@ -72,7 +72,7 @@ public class CollectionsCompare {
     private long addTest(List<Integer> list) {
         long timeStart = System.currentTimeMillis();
         for(int i = 0; i < sizeOfLists; i++) {
-            list.add((int) (Math.random() * 1001));
+            list.add(100);
         }
         return System.currentTimeMillis() - timeStart;
     }
